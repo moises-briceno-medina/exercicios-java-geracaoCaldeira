@@ -48,9 +48,9 @@ public class Exercicio03 {
 //        System.out.println("[Solução com if] O menor número é: " + minValue);
 //        System.out.println("[Solução com if] A média aritmética é: " + arithmeticMean);
 
-        double numeroMaior = Math.max(firstNumber, Math.max(segundoNumero, thirdNumber));
-        double numeroMenor = Math.min(firstNumber, Math.min(segundoNumero, thirdNumber));
-        double media = (firstNumber + segundoNumero + thirdNumber) / 3;
+        double numeroMaior = Math.max(firstNumber, Math.max(secondNumber, thirdNumber));
+        double numeroMenor = Math.min(firstNumber, Math.min(secondNumber, thirdNumber));
+        double media = (firstNumber + secondNumber + thirdNumber) / 3;
 
         System.out.println("O numero maior é: " + numeroMaior);
         System.out.println("o número menor é: " + numeroMenor);

@@ -10,9 +10,10 @@ public class Exercicio06 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();
 
+        int idadeUsuario;
         do {
-            int idadeUsuario = scan.coletaInt("Digite sua idade: ");
-        }while (idadeUsuario <= 0 || idadeUsuario >= 120)
+            idadeUsuario = scan.coletaInt("Digite sua idade: ");
+        } while (idadeUsuario <= 0 || idadeUsuario >= 120);
 
 
         if (idadeUsuario < 16) {
