@@ -5,8 +5,7 @@ public class Exercio01 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();
 
-        int inicioIntervalo = 0;
-        int fimIntervalo  = 0;
+        int inicioIntervalo , fimIntervalo , flag = 0;
 
         do {
             inicioIntervalo = scan.coletaInt("Informe o intervalo inicial");
@@ -16,9 +15,19 @@ public class Exercio01 {
             fimIntervalo = scan.coletaInt("Informe o intervalo final");
         }while (fimIntervalo < inicioIntervalo);
 
-        
+        for (int i = inicioIntervalo ; i <= fimIntervalo; i++){
 
-
-
+            for (int j = 2 ; j<i ; j++){
+                if (i % j == 0) {
+                    flag = 1;
+                    j = i;
+                }
+            }
+            if (flag == 0){
+                System.out.printf(" %d ", i);
+            }else {
+                flag = 0;
+            }
+        }
     }
 }
