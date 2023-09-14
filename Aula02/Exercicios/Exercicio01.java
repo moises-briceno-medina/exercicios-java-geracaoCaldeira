@@ -1,7 +1,7 @@
 import utils.ScanUtils;
 
 //Crie um programa que determine e escreva os números primos compreendidos entre um intervalo fornecido pelo usuário.
-public class Exercio01 {
+public class Exercicio01 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();
 

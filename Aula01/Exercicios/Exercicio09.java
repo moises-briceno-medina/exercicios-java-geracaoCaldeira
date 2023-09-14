@@ -6,10 +6,10 @@ public class Exercicio09 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();
 
-
+        int anoDeNascimento =0;
         do {
-            int anoDeNascimento = scan.coletaInt("informe seu ano de nascimento: ");
-        }while (anoDeNascimento <= 2023 || anoDeNascimento <= 1900)
+            anoDeNascimento = scan.coletaInt("informe seu ano de nascimento: ");
+        }while (anoDeNascimento <= 2023 || anoDeNascimento <= 1900);
 
         System.out.println("Sua idade é: " + (2023-anoDeNascimento));
     }

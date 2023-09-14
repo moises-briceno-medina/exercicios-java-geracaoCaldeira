@@ -5,7 +5,7 @@
 
 import utils.ScanUtils;
 
-public class Exercicio08 {
+public class  Exercicio08 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();
 

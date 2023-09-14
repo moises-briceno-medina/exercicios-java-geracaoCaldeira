@@ -7,9 +7,10 @@ public class Exercicio07 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();
 
+        int idadeUsuario =0;
         do {
-            int idadeUsuario = scan.coletaInt("Informe sua idade: ");
-        }while (idadeUsuario <= 0 || idadeUsuario >= 120)
+            idadeUsuario = scan.coletaInt("Informe sua idade: ");
+        }while (idadeUsuario <= 0 || idadeUsuario >= 120);
 
         double salario = scan.coletaDouble("Informe seu salario");
 
