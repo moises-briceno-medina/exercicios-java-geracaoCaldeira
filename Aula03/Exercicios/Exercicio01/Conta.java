@@ -1,5 +1,9 @@
 package Aula03.Exercicios.Exercicio01;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class Conta {
 
     private String nome;
@@ -11,6 +15,7 @@ public class Conta {
     private int horarioAtual;
     private double manutencaoMensalConta = 15;
     private boolean contaAberta;
+    private List<Transacao> historicoDeTransacoes;
 
     //Construtor
     public Conta(String nome, String cpf, int identificadorConta, String nomeBanco, String endereco) {
@@ -19,6 +24,7 @@ public class Conta {
 //        this.identificadorConta = (int) ((Math.random() * 100) + 1);
         this.contaAberta = true;
         this.saldo = 0;
+        this.historicoDeTransacoes = new ArrayList<>();
     }
 
 
@@ -27,6 +33,7 @@ public class Conta {
         if (contaAberta == true) {
             if (this.saldo >= valor) {
                 this.saldo -= valor;
+                historicoDeTransacoes.add(new Transacao(new Date(),"Saque", valor));
             } else System.out.println("Saldo insuficiente.");
         } else System.out.println("Não é possível fazer saques, a conta está fechada");
     }
@@ -34,6 +41,7 @@ public class Conta {
     public void deposito(double valor) {
         if (contaAberta == true) {
             this.saldo += valor;
+            historicoDeTransacoes.add(new Transacao(new Date(),"Depósito",valor));
         } else System.out.println("Não é possível fazer depositos, a conta está fechada");
     }
 
@@ -42,6 +50,8 @@ public class Conta {
             if (horarioAtual == hora && this.saldo >= valor && destino.contaAberta) {
                 destino.saldo += valor;
                 this.saldo -= valor;
+                historicoDeTransacoes.add(new Transacao(new Date(),"Pix",valor));
+
             } else System.out.println("Não foi possível realizar o pix");
         } else System.out.println("Não é possível fazer pix, a conta está fechada");
     }
@@ -51,6 +61,7 @@ public class Conta {
             if (horarioAtual >= 8 && horarioAtual <= 19 && this.saldo >= valor && destino.contaAberta) {
                 destino.saldo += valor;
                 this.saldo -= valor;
+                historicoDeTransacoes.add(new Transacao(new Date(),"Tranferencia",valor));
             } else System.out.println("Não foi possível realizar a transferencia");
         } else System.out.println("Não é possível fazer transferencia, a conta está fechada");
     }
@@ -79,8 +90,19 @@ public class Conta {
         } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
-    //tarefas adicionais
+    //Tarefas adicionais
 
+    public void verificartransacoes(){
+        if (contaAberta = true){
+            for (Transacao transacao : historicoDeTransacoes) {
+            System.out.println(transacao);
+        }
+        }else System.out.println("Não foi possivel, a conta está fechada");
+//        List<Transacao> historico = conta.getHistorico();
+//        for (Transacao transacao : historico) {
+//            System.out.println(transacao);
+//        }
+    }
     public void alterarEndereco(String novoEndereco) {
         if (contaAberta == true) {
             this.endereco = novoEndereco;
@@ -92,6 +114,14 @@ public class Conta {
             if (dia == 1) {
                 this.saldo -= manutencaoMensalConta;
             }
+        } else System.out.println("Não foi possivel, a conta está fechada");
+    }
+
+    public void calculaJuros(double taxa) {
+        if (contaAberta == true) {
+            double jurosMensais = this.saldo * (taxa/100);
+            this.saldo+= jurosMensais;
+            System.out.println("Juros mensais: " + jurosMensais);
         } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
@@ -138,6 +168,9 @@ public class Conta {
 
     public boolean isContaAberta() {
         return contaAberta;
+    }
+    public List<Transacao> getHistorico() {
+        return historicoDeTransacoes    ;
     }
 
     //  setter

@@ -10,15 +10,16 @@ public class TestConta {
         conta2.setHorarioAtual(12);
         conta1.setHorarioAtual(12);
 
-        conta1.deposito(100);
+        conta1.deposito(200);
+//        conta1.saque(50);
+//        conta1.transferencia(conta2, 40);
+//        conta1.pix(18,conta2,12);
 
-//        conta1.verificarInformacoes();
-//        conta1.verificarHorario();
-        conta1.transferencia(conta2, 50);
-
-//        conta1.manutencaoMensal(1);
-        conta1.pix(10,conta2,12);
+        conta1.calculaJuros(2);
         conta1.verificarSaldo();
+
         conta2.verificarSaldo();
+
+//        conta1.verificartransacoes();
     }
 }
