@@ -9,77 +9,105 @@ public class Conta {
     private String endereco;
     private double saldo;
     private int horarioAtual;
-
-    private double manutencaoMensalConta = 14.50;
+    private double manutencaoMensalConta = 15;
+    private boolean contaAberta;
 
     //Construtor
-    public Conta(String nome, String cpf, int identificadorConta){
+    public Conta(String nome, String cpf, int identificadorConta, String nomeBanco, String endereco) {
         this.nome = nome;
         this.cpf = cpf;
-        this.identificadorConta =identificadorConta;
+//        this.identificadorConta = (int) ((Math.random() * 100) + 1);
+        this.contaAberta = true;
+        this.saldo = 0;
     }
 
 
     public void saque(double valor) {
-        if (this.saldo >= valor) {
-            this.saldo = this.saldo - valor;
-        }
+
+        if (contaAberta == true) {
+            if (this.saldo >= valor) {
+                this.saldo -= valor;
+            } else System.out.println("Saldo insuficiente.");
+        } else System.out.println("Não é possível fazer saques, a conta está fechada");
     }
 
     public void deposito(double valor) {
-        this.saldo = this.saldo + valor;
+        if (contaAberta == true) {
+            this.saldo += valor;
+        } else System.out.println("Não é possível fazer depositos, a conta está fechada");
     }
 
-    public void pix(double valor , int hora , Conta destino){
-        if (horarioAtual == hora && this.saldo>= valor){
-            destino.saldo = valor;
-        }
+    public void pix(double valor, Conta destino, int hora) {
+        if (contaAberta == true) {
+            if (horarioAtual == hora && this.saldo >= valor && destino.contaAberta) {
+                destino.saldo += valor;
+                this.saldo -= valor;
+            } else System.out.println("Não foi possível realizar o pix");
+        } else System.out.println("Não é possível fazer pix, a conta está fechada");
     }
+
     public void transferencia(Conta destino, double valor) {
-        if (horarioAtual > 8 && horarioAtual < 19 && this.saldo >= valor) {
-            destino.saldo = valor;
-        }else System.out.println("Nao tem saldo suficiente");
+        if (contaAberta = true) {
+            if (horarioAtual >= 8 && horarioAtual <= 19 && this.saldo >= valor && destino.contaAberta) {
+                destino.saldo += valor;
+                this.saldo -= valor;
+            } else System.out.println("Não foi possível realizar a transferencia");
+        } else System.out.println("Não é possível fazer transferencia, a conta está fechada");
     }
 
-    public double verificarSaldo() {
-        return this.saldo;
+    public void verificarSaldo() {
+        if (contaAberta) {
+            System.out.println("Saldo atual R$: " + this.saldo);
+        } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
-    public void verificarHorario(){
-            System.out.println("Horario atual " + horarioAtual+"h");
+    public void verificarHorario() {
+        if (contaAberta == true) {
+            System.out.println("Horario atual " + this.horarioAtual + "h");
+        } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
-    public void verificarInformacoes(){
-        System.out.println(this.nome);
-        System.out.println(this.cpf);
-        System.out.println(this.identificadorConta);
-        System.out.println(this.nomeBanco);
-        System.out.println(this.endereco);
-        System.out.println(this.saldo);
-        System.out.println(this.horarioAtual);
+    public void verificarInformacoes() {
+        if (contaAberta == true) {
+            System.out.println(this.nome);
+            System.out.println(this.cpf);
+            System.out.println(this.identificadorConta);
+            System.out.println(this.nomeBanco);
+            System.out.println(this.endereco);
+            System.out.println(this.saldo);
+            System.out.println(this.horarioAtual);
+        } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
     //tarefas adicionais
 
-    public void alterarEndereco(String novoEndereco){
-        this.endereco = novoEndereco;
+    public void alterarEndereco(String novoEndereco) {
+        if (contaAberta == true) {
+            this.endereco = novoEndereco;
+        } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
-    public void manutencaoMensal(int dia){
-        if (dia == 1 ){
-            this.saldo = this.saldo - manutencaoMensalConta;
-        }
+    public void manutencaoMensal(int dia) {
+        if (contaAberta == true) {
+            if (dia == 1) {
+                this.saldo -= manutencaoMensalConta;
+            }
+        } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
-
-
-
-
+    public void fecharConta() {
+        if (contaAberta = true) {
+            this.saldo = 0;
+            contaAberta = false;
+            System.out.println("Conta fechada com sucesso.");
+        } else System.out.println("Esta conta já esta fechada");
+    }
 
     //getters
     public String getNome() {
         return nome;
     }
+
     public String getCpf() {
         return cpf;
     }
@@ -104,31 +132,15 @@ public class Conta {
         return horarioAtual;
     }
 
+    public double getManutencaoMensalConta() {
+        return manutencaoMensalConta;
+    }
+
+    public boolean isContaAberta() {
+        return contaAberta;
+    }
+
     //  setter
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public void setIdentificadorConta(int identificadorConta) {
-        this.identificadorConta = identificadorConta;
-    }
-
-    public void setNomeBanco(String nomeBanco) {
-        this.nomeBanco = nomeBanco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
     public void setHorarioAtual(int horarioAtual) {
         this.horarioAtual = horarioAtual;
     }
