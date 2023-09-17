@@ -92,16 +92,12 @@ public class Conta {
 
     //Tarefas adicionais
 
-    public void verificartransacoes(){
+    public void verificarTransacoes(){
         if (contaAberta = true){
             for (Transacao transacao : historicoDeTransacoes) {
             System.out.println(transacao);
         }
         }else System.out.println("Não foi possivel, a conta está fechada");
-//        List<Transacao> historico = conta.getHistorico();
-//        for (Transacao transacao : historico) {
-//            System.out.println(transacao);
-//        }
     }
     public void alterarEndereco(String novoEndereco) {
         if (contaAberta == true) {
@@ -117,7 +113,7 @@ public class Conta {
         } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
-    public void calculaJuros(double taxa) {
+    public void calcularJuros(double taxa) {
         if (contaAberta == true) {
             double jurosMensais = this.saldo * (taxa/100);
             this.saldo+= jurosMensais;

@@ -1,7 +1,5 @@
 package Aula03.Exercicios.Exercicio01;
 
-import Aula03.Exercicios.Exercicio01.Conta;
-
 public class TestConta {
     public static void main(String[] args) {
         Conta conta1 = new Conta("Moises briceno", "708948844-50", 2021, "Banrisul","Av protasio alves" );
@@ -15,7 +13,7 @@ public class TestConta {
 //        conta1.transferencia(conta2, 40);
 //        conta1.pix(18,conta2,12);
 
-        conta1.calculaJuros(2);
+        conta1.calcularJuros(2);
         conta1.verificarSaldo();
 
         conta2.verificarSaldo();
