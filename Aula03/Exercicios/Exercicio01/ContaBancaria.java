@@ -1,24 +1,24 @@
 package Aula03.Exercicios.Exercicio01;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Conta {
-
+public class ContaBancaria {
     private String nome;
     private String cpf;
     private int identificadorConta;
     private String nomeBanco;
     private String endereco;
     private double saldo;
-    private int horarioAtual;
+    private LocalTime horarioAtual; // = LocalTime.now(); -> horario real atual
     private double manutencaoMensalConta = 15;
     private boolean contaAberta;
     private List<Transacao> historicoDeTransacoes;
 
     //Construtor
-    public Conta(String nome, String cpf, int identificadorConta, String nomeBanco, String endereco) {
+    public ContaBancaria(String nome, String cpf, int identificadorConta, String nomeBanco, String endereco) {
         this.nome = nome;
         this.cpf = cpf;
 //        this.identificadorConta = (int) ((Math.random() * 100) + 1);
@@ -30,38 +30,43 @@ public class Conta {
 
     public void saque(double valor) {
 
-        if (contaAberta == true) {
+        if (contaAberta ) {
             if (this.saldo >= valor) {
                 this.saldo -= valor;
-                historicoDeTransacoes.add(new Transacao(new Date(),"Saque", valor));
+                historicoDeTransacoes.add(new Transacao(new Date(), "Saque", valor));
             } else System.out.println("Saldo insuficiente.");
         } else System.out.println("Não é possível fazer saques, a conta está fechada");
     }
 
     public void deposito(double valor) {
-        if (contaAberta == true) {
+        if (contaAberta) {
             this.saldo += valor;
-            historicoDeTransacoes.add(new Transacao(new Date(),"Depósito",valor));
+            historicoDeTransacoes.add(new Transacao(new Date(), "Depósito", valor));
         } else System.out.println("Não é possível fazer depositos, a conta está fechada");
     }
 
-    public void pix(double valor, Conta destino, int hora) {
-        if (contaAberta == true) {
-            if (horarioAtual == hora && this.saldo >= valor && destino.contaAberta) {
+    public void pix(double valor, ContaBancaria destino, LocalTime hora) {
+        if (contaAberta) {
+//            horarioAtual = horarioAtual.withSecond(0); em caso de ser hor real usar
+//            horarioAtual = horarioAtual.withNano(0); em caso de ser hor real usar
+
+            if (horarioAtual.equals(hora) && this.saldo >= valor && destino.contaAberta) {
                 destino.saldo += valor;
                 this.saldo -= valor;
-                historicoDeTransacoes.add(new Transacao(new Date(),"Pix",valor));
+                historicoDeTransacoes.add(new Transacao(new Date(), "Pix", valor));
 
             } else System.out.println("Não foi possível realizar o pix");
         } else System.out.println("Não é possível fazer pix, a conta está fechada");
     }
 
-    public void transferencia(Conta destino, double valor) {
-        if (contaAberta = true) {
-            if (horarioAtual >= 8 && horarioAtual <= 19 && this.saldo >= valor && destino.contaAberta) {
+    public void transferencia(ContaBancaria destino, double valor) {
+        if (contaAberta) {
+            LocalTime inicioIntervalo = LocalTime.of(8, 0);
+            LocalTime fimIntervalo = LocalTime.of(19, 0);
+            if (horarioAtual.isAfter(inicioIntervalo) && horarioAtual.isBefore(fimIntervalo) && this.saldo >= valor && destino.contaAberta) {
                 destino.saldo += valor;
                 this.saldo -= valor;
-                historicoDeTransacoes.add(new Transacao(new Date(),"Tranferencia",valor));
+                historicoDeTransacoes.add(new Transacao(new Date(), "Tranferencia", valor));
             } else System.out.println("Não foi possível realizar a transferencia");
         } else System.out.println("Não é possível fazer transferencia, a conta está fechada");
     }
@@ -73,13 +78,13 @@ public class Conta {
     }
 
     public void verificarHorario() {
-        if (contaAberta == true) {
+        if (contaAberta) {
             System.out.println("Horario atual " + this.horarioAtual + "h");
         } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
     public void verificarInformacoes() {
-        if (contaAberta == true) {
+        if (contaAberta ) {
             System.out.println(this.nome);
             System.out.println(this.cpf);
             System.out.println(this.identificadorConta);
@@ -92,21 +97,22 @@ public class Conta {
 
     //Tarefas adicionais
 
-    public void verificarTransacoes(){
-        if (contaAberta = true){
+    public void verificarTransacoes() {
+        if (contaAberta) {
             for (Transacao transacao : historicoDeTransacoes) {
-            System.out.println(transacao);
-        }
-        }else System.out.println("Não foi possivel, a conta está fechada");
+                System.out.println(transacao);
+            }
+        } else System.out.println("Não foi possivel, a conta está fechada");
     }
+
     public void alterarEndereco(String novoEndereco) {
-        if (contaAberta == true) {
+        if (contaAberta) {
             this.endereco = novoEndereco;
         } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
     public void manutencaoMensal(int dia) {
-        if (contaAberta == true) {
+        if (contaAberta) {
             if (dia == 1) {
                 this.saldo -= manutencaoMensalConta;
             }
@@ -114,15 +120,15 @@ public class Conta {
     }
 
     public void calcularJuros(double taxa) {
-        if (contaAberta == true) {
-            double jurosMensais = this.saldo * (taxa/100);
-            this.saldo+= jurosMensais;
+        if (contaAberta) {
+            double jurosMensais = this.saldo * (taxa / 100);
+            this.saldo += jurosMensais;
             System.out.println("Juros mensais: " + jurosMensais);
         } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
     public void fecharConta() {
-        if (contaAberta = true) {
+        if (contaAberta) {
             this.saldo = 0;
             contaAberta = false;
             System.out.println("Conta fechada com sucesso.");
@@ -154,7 +160,7 @@ public class Conta {
         return saldo;
     }
 
-    public int getHorarioAtual() {
+    public LocalTime getHorarioAtual() {
         return horarioAtual;
     }
 
@@ -165,13 +171,13 @@ public class Conta {
     public boolean isContaAberta() {
         return contaAberta;
     }
+
     public List<Transacao> getHistorico() {
-        return historicoDeTransacoes    ;
+        return historicoDeTransacoes;
     }
 
     //  setter
-    public void setHorarioAtual(int horarioAtual) {
+    public void setHorarioAtual(LocalTime horarioAtual) {
         this.horarioAtual = horarioAtual;
     }
 }
-
