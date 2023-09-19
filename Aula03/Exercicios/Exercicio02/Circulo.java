@@ -1,7 +1,4 @@
 package Aula03.Exercicios.Exercicio02;
-
-import Aula03.Exercicios.Exercicio01.utils.ScanUtils;
-
 public class Circulo {
     private double raio;
 
