@@ -1,7 +1,13 @@
 package Aula04.Exercicios.Exercicio03;
 
+import java.util.ArrayList;
+
 public class Conta {
     private double saldo;
+
+    public Conta() {
+        this.saldo = 0;
+    }
 
     public void sacar(double valor) {
         if (this.saldo >= valor) {
