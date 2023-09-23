@@ -1,9 +1,16 @@
 package Aula03.Exercicios.Exercicio02;
+
+import java.util.Locale;
+
 public class Circulo {
     private double raio;
+    private double cordenadaX;
+    private double cordenadaY;
 
-    public Circulo(double raio) {
+    public Circulo(double raio, double x, double y) {
         this.raio = raio;
+        this.cordenadaX = x;
+        this.cordenadaY = y;
     }
 
     public void calcularArea() {
@@ -54,6 +61,24 @@ public class Circulo {
             System.out.println("A área sombreada dos circulos é: " + (areaCirculoMaior - areaCirculomenor));
         }
     }
+
+    //Exibindo uma representação em texto do círculo, incluindo o raio, a área e a circunferência.
+    @Override
+    public String toString() {
+        return "Um círculo é uma figura geométrica fundamental na matemática e na geometria. \nEle é caracterizado por várias propriedades importantes, incluindo seu raio, área e circunferência. \n" +
+                "Raio:\n" +
+                "O raio de um círculo é a distância do centro do círculo até qualquer ponto na sua borda. \nO símbolo comumente usado para representar o raio é \"r\". O raio é uma medida crucial, pois define o tamanho do círculo. \n" +
+                "Área:\n" +
+                "A área de um círculo é a quantidade de espaço contida dentro de sua borda.\n" +
+                "Circunferência:\n" +
+                "A circunferência de um círculo é o comprimento da sua borda. \n "
+                ;
+    }
+    // Exibindo a representação do círculo
+//    @Override
+//    public String toString() {
+//        return String.format(Locale.US, "Círculo com centro em (%.2f, %.2f) e raio %.2f", cordenadaX, cordenadaY, raio);
+//    }
 
     //getter
     public double getRaio() {
