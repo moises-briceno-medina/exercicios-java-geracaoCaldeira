@@ -22,15 +22,17 @@ public class ContaBancaria {
         this.nome = nome;
         this.cpf = cpf;
 //        this.identificadorConta = (int) ((Math.random() * 100) + 1);
+        this.identificadorConta = identificadorConta;
         this.contaAberta = true;
         this.saldo = 0;
         this.historicoDeTransacoes = new ArrayList<>();
+        this.nomeBanco = nomeBanco;
     }
 
 
     public void saque(double valor) {
 
-        if (contaAberta ) {
+        if (contaAberta) {
             if (this.saldo >= valor) {
                 this.saldo -= valor;
                 historicoDeTransacoes.add(new Transacao(new Date(), "Saque", valor));
@@ -84,14 +86,14 @@ public class ContaBancaria {
     }
 
     public void verificarInformacoes() {
-        if (contaAberta ) {
-            System.out.println(this.nome);
-            System.out.println(this.cpf);
-            System.out.println(this.identificadorConta);
-            System.out.println(this.nomeBanco);
-            System.out.println(this.endereco);
-            System.out.println(this.saldo);
-            System.out.println(this.horarioAtual);
+        if (contaAberta) {
+            System.out.println("Nome: " + this.nome);
+            System.out.println("CPF: " + this.cpf);
+            System.out.println("Indentificador da conta: " + this.identificadorConta);
+            System.out.println("Banco: " + this.nomeBanco);
+            System.out.println("Endereço: " + this.endereco);
+            System.out.println("Saldo: " + this.saldo);
+            System.out.println("Horario: " + this.horarioAtual);
         } else System.out.println("Não foi possivel, a conta está fechada");
     }
 
@@ -99,6 +101,8 @@ public class ContaBancaria {
 
     public void verificarTransacoes() {
         if (contaAberta) {
+            System.out.println("Histrico Da Conta:");
+            System.out.println("#Identificador Conta:" + "[" + getIdentificadorConta() + "]" + " #Nome Do titular:" + getNome());
             for (Transacao transacao : historicoDeTransacoes) {
                 System.out.println(transacao);
             }
