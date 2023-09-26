@@ -1,4 +1,4 @@
-package Aula05.Exercicios.Exercicios;
+package Aula05.Exercicios.Exercicio02;
 
 import Aula05.Exercicios.utils.ScanUtils;
 

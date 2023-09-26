@@ -1,4 +1,4 @@
-package Aula05.Exercicios.Exercicios;
+package Aula05.Exercicios.Exercicio01;
 import Aula05.Exercicios.utils.ScanUtils;
 public class Exercicio01 {
     public static void main(String[] args) {
