@@ -8,4 +8,6 @@ public class Impressao {
         this.nome = nome;
         this.numeroDePagina = numeroDePagina;
     }
+
+
 }
