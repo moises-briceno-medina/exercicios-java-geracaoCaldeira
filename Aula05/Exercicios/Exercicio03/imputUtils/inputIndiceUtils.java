@@ -1,8 +1,8 @@
-package Aula05.Exercicios.utils;
-
+package Aula05.Exercicios.Exercicio03.imputUtils;
 import Aula05.Exercicios.Exercicio03.Tarefa;
-
+import Aula05.Exercicios.utils.ScanUtils;
 import java.util.List;
+
 public class inputIndiceUtils {
     public static int inputIndice(List<Tarefa> listaTarefas, ScanUtils scan){
         int indice;

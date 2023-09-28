@@ -5,7 +5,8 @@ import Aula05.Exercicios.utils.ScanUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Aula05.Exercicios.utils.inputIndiceUtils.inputIndice;
+import static Aula05.Exercicios.Exercicio03.imputUtils.inputIndiceUtils.inputIndice;
+
 
 public class TarefaTest {
     public static void main(String[] args) {
@@ -56,7 +57,7 @@ public class TarefaTest {
 
     public static void removerTarefas(List<Tarefa> listaTarefas, ScanUtils scan) {
         listaTarefas.remove(inputIndice(listaTarefas, scan));
-        System.out.printf("Tarefa criada!");
+        System.out.printf("Tarefa removida!");
     }
 
     public static void exibirTarefas(List<Tarefa> listaTarefas) {
