@@ -3,7 +3,7 @@ import Aula05.Exercicios.Exercicio03.Tarefa;
 import Aula05.Exercicios.utils.ScanUtils;
 import java.util.List;
 
-public class inputIndiceUtils {
+public class inputIndiceUtilsTarefa {
     public static int inputIndice(List<Tarefa> listaTarefas, ScanUtils scan){
         int indice;
         do {

@@ -5,7 +5,7 @@ import Aula05.Exercicios.utils.ScanUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Aula05.Exercicios.Exercicio04.imputUtils.inputIndiceUtils.inputIndice;
+import static Aula05.Exercicios.Exercicio04.imputUtils.inputIndiceUtilsCompra.inputIndice;
 
 public class ListaDeCompra {
     public static void main(String[] args) {

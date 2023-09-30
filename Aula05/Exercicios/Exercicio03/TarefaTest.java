@@ -5,7 +5,7 @@ import Aula05.Exercicios.utils.ScanUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Aula05.Exercicios.Exercicio03.imputUtils.inputIndiceUtils.inputIndice;
+import static Aula05.Exercicios.Exercicio03.imputUtils.inputIndiceUtilsTarefa.inputIndice;
 
 
 public class TarefaTest {

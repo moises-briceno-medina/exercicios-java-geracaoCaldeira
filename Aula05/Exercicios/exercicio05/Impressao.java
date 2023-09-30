@@ -8,6 +8,8 @@ public class Impressao {
         this.nome = nome;
         this.numeroDePagina = numeroDePagina;
     }
-
-
+    @Override
+    public String toString() {
+        return "Nome:" + nome + ", Numeros de pagina: " + numeroDePagina ; // Personalize como desejar
+    }
 }
