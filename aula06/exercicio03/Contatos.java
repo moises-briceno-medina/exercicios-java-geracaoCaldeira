@@ -7,7 +7,7 @@ public class Contatos {
     private String endereco;
     private String localidade;
 
-    public Contatos(String numeroDeTelefono, String nome, String endereco, String localDaCidade) {
+    public Contatos( String nome,String numeroDeTelefono, String endereco, String localDaCidade) {
         this.numeroDeTelefone = numeroDeTelefono;
         this.nome = nome;
         this.endereco = endereco;
