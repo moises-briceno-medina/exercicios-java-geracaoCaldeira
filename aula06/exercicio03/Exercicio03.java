@@ -14,35 +14,44 @@ import java.util.TreeMap;
 public class Exercicio03 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();
-        TreeMap<Contatos, String> AgendaTelefonica = new TreeMap<>();
+        TreeMap<String, Contatos> agendaTelefonica = new TreeMap<>();
 
+        
     }
 
-    public static void adicionarContatos(TreeMap<String, String> contatos, ScanUtils scan){
+    public static void adicionarContatos(TreeMap<String, Contatos> contatos, ScanUtils scan) {
         String nome = scan.coletaTexto("Digite o nome para associar ao número telefone:");
         String numeroTelefone = scan.coletaTexto("Digite o número de telefone:");
         String localidade = scan.coletaTexto("Digite sua localidade (norte, sul, centro, leste e oeste):");
         String endereco = scan.coletaTexto("Digite o endereço:");
 
-        Contatos newAgenda = new Contatos(nome,numeroTelefone,endereco,localidade);
-        contatos.put(nome, numeroTelefone);
+        Contatos newContatos = new Contatos(nome, numeroTelefone, endereco, localidade);
+        contatos.put(numeroTelefone, newContatos);
         System.out.println("contato adicionado com sucesso");
     }
 
-    public static void imprimirListaDeContato(TreeMap<Contatos, String> agendaTelefonica){
+    public static void imprimirListaDeContato(TreeMap<String, Contatos> agendaTelefonica) {
         System.out.println("Lista em ordem alfabética");
-        for (Map.Entry< Contatos, String> entry : agendaTelefonica.entrySet()) {
+        for (Map.Entry<String, Contatos> entry : agendaTelefonica.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
 
-    public static boolean verificaListaVazia(TreeMap<String, String> agendaTelefonica){
-        if (!agendaTelefonica.isEmpty()){
+    public static void imprimirListaPorLocalidade(TreeMap<String, Contatos> agendaTelefonica, ScanUtils scan) {
+        String localidade = scan.coletaTexto("Digite a localidade que deseja ver (norte, sul, centro, leste e oeste): ");
+        for (Map.Entry<String, Contatos> entry : agendaTelefonica.entrySet()) {
+            Contatos contatos = entry.getValue();
+            if (contatos.getLocalidade().equals(localidade)) {
+                System.out.println(entry.getKey() + ": " + contatos);
+            }
+        }
+    }
+
+    public static boolean verificaListaVazia(TreeMap<String, Contatos> agendaTelefonica) {
+        if (!agendaTelefonica.isEmpty()) {
             return true;
-        }else
+        } else
             System.out.println("Lista de contatos vazia");
         return false;
     }
-
-
 }
