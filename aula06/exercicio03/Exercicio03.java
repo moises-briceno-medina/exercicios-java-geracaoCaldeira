@@ -17,5 +17,12 @@ public class Exercicio03 {
 
     }
 
-    
+    public static void adicionarAgendaTelefonica(TreeMap<String, String> agendaTelefonica, ScanUtils scan){
+        String nome = scan.coletaTexto("Digite o nome para associar ao número telefone");
+        String numeroTelefone = scan.coletaTexto("Digite o número de telefone");
+
+        Agenda newAgenda = new Agenda("(51)981168204", "Moises","av protasio alves","norte");
+        agendaTelefonica.put(nome, numeroTelefone);
+        System.out.println("Nome e número de telefone associados com sucesso");
+    }
 }
