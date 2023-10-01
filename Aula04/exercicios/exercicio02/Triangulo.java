@@ -14,7 +14,7 @@ public class Triangulo extends FormaGeometrica {
         return nome;
     }
 
-    public double CalcularArea() {
+    public double calcularArea() {
         return (base*altura)/2;
     }
 }

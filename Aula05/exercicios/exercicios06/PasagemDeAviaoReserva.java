@@ -36,6 +36,8 @@ public class PasagemDeAviaoReserva {
                     break;
                 case 4:
                     System.out.println("fechando programa");
+                default:
+                    System.out.println("Opção inválida.");
             }
         }
 

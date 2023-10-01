@@ -10,7 +10,7 @@ public class Exercicio02 {
 
         //for para adicionar os numeros aleatorios
         for (int i = 0; i < arrayNumerosAleatorios.length; i++) {
-            arrayNumerosAleatorios[i] = GeradorNumeroAleatorio(arrayNumerosAleatorios);
+            arrayNumerosAleatorios[i] = geradorNumeroAleatorio(arrayNumerosAleatorios);
         }
 
         //for só para imprimir na tela cada número
@@ -29,7 +29,7 @@ public class Exercicio02 {
         }
     }
 
-    public static int GeradorNumeroAleatorio(int[] array) { // metodo gerador de numeros aleatorios
+    public static int geradorNumeroAleatorio(int[] array) { // metodo gerador de numeros aleatorios
         int quantidadeNumeros = array.length;
         int numeroAleatorio = 0;
         for (int i = 0; i < quantidadeNumeros; i++) {

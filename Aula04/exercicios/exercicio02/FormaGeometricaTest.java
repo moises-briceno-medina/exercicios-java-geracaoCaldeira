@@ -11,7 +11,7 @@ public class FormaGeometricaTest {
         formas.add(new Triangulo(5,10, "triangulo"));
 
         for (FormaGeometrica forma : formas){
-            System.out.println("Área da forma " + forma.getClass().getSimpleName()+ " tem " + String.format("%.2f", forma.CalcularArea()));
+            System.out.println("Área da forma " + forma.getClass().getSimpleName()+ " tem " + String.format("%.2f", forma.calcularArea()));
         }
     }
 }

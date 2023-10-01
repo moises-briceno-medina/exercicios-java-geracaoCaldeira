@@ -40,6 +40,8 @@ public class TarefaTest {
                     break;
                 case 4:
                     System.out.println("Fechadno o Programa");
+                default:
+                    System.out.println("Opção inválida.");
             }
         }
     }

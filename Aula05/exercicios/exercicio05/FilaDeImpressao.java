@@ -31,6 +31,8 @@ public class FilaDeImpressao {
                     break;
                 case 3:
                     System.out.println("Fechadno o Programa");
+                default:
+                    System.out.println("Opção inválida.");
             }
         }
 

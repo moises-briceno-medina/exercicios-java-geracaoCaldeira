@@ -12,7 +12,7 @@ public class Retangulo extends FormaGeometrica {
         this.nome = nome;
     }
     @Override
-    public double CalcularArea() {
+    public double calcularArea() {
         return base * altura;
     }
 

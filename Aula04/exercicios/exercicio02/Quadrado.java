@@ -13,5 +13,5 @@ public class Quadrado extends FormaGeometrica {
         this.nome = nome;
     }
     @Override
-    public double CalcularArea() {return lado * lado;}
+    public double calcularArea() {return lado * lado;}
 }

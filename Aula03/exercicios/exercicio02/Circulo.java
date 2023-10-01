@@ -39,7 +39,7 @@ public class Circulo {
         }
     }
 
-    public void CalcularDiametro() {
+    public void calcularDiametro() {
         if (this.raio >= 0) {
             System.out.println("O diâmetro do circulo é: " + 2 * this.raio);
         }
