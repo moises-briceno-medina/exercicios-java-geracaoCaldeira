@@ -1,4 +1,4 @@
-package aula06;
+package aula06.exercicio01;
 
 public class Livro {
     private String titulo;
@@ -13,8 +13,12 @@ public class Livro {
         return categoria;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
     @Override
     public String toString() {
-        return "Titulo: " + titulo + ", Categoria:" + categoria;
+        return "Titulo: " + titulo + ", Categoria: " + categoria;
     }
 }

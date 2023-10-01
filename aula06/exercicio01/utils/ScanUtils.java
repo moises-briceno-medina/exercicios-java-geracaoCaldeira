@@ -1,4 +1,4 @@
-package aula06.utils;
+package aula06.exercicio01.utils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
