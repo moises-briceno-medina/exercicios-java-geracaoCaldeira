@@ -8,7 +8,7 @@ package aula06.exercicio03;
 
 import aula01.utils.ScanUtils;
 
-import java.util.HashSet;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Exercicio03 {
@@ -29,7 +29,12 @@ public class Exercicio03 {
         System.out.println("contato adicionado com sucesso");
     }
 
-
+    public static void imprimirListaDeContato(TreeMap<Contatos, String> agendaTelefonica){
+        System.out.println("Lista em ordem alfabética");
+        for (Map.Entry< Contatos, String> entry : agendaTelefonica.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
 
     public static boolean verificaListaVazia(TreeMap<String, String> agendaTelefonica){
         if (!agendaTelefonica.isEmpty()){
