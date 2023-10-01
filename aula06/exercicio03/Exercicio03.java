@@ -8,6 +8,7 @@ package aula06.exercicio03;
 
 import aula01.utils.ScanUtils;
 
+import java.util.HashSet;
 import java.util.TreeMap;
 
 public class Exercicio03 {
@@ -17,13 +18,13 @@ public class Exercicio03 {
 
     }
 
-    public static void adicionarContatos(TreeMap<String, String> agendaTelefonica, ScanUtils scan){
+    public static void adicionarContatos(TreeMap<String, String> contatos, ScanUtils scan){
         String nome = scan.coletaTexto("Digite o nome para associar ao número telefone");
         String numeroTelefone = scan.coletaTexto("Digite o número de telefone");
 
-        Agenda newAgenda = new Agenda("(51)981168204", "Moises","av protasio alves","norte");
-        agendaTelefonica.put(nome, numeroTelefone);
-        System.out.println("Nome e número de telefone associados com sucesso");
+        Contatos newAgenda = new Contatos("(51)981168204", "Moises","av protasio alves","norte");
+        contatos.put(nome, numeroTelefone);
+        System.out.println("contato adicionado com sucesso");
     }
 
 }
