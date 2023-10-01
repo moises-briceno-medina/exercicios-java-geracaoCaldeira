@@ -29,4 +29,15 @@ public class Exercicio03 {
         System.out.println("contato adicionado com sucesso");
     }
 
+
+
+    public static boolean verificaListaVazia(TreeMap<String, String> agendaTelefonica){
+        if (!agendaTelefonica.isEmpty()){
+            return true;
+        }else
+            System.out.println("Lista de contatos vazia");
+        return false;
+    }
+
+
 }
