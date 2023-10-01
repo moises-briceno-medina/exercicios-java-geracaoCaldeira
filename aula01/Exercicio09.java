@@ -1,7 +1,6 @@
 package aula01;//Crie um programa em Java que peça ao usuário para inserir
 // seu ano de nascimento e, em seguida, calcule e exiba a idade.
-import utils.ScanUtils;
-
+import aula01.utils.ScanUtils;
 public class Exercicio09 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();

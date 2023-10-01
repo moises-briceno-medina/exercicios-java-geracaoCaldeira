@@ -3,7 +3,7 @@ package aula01;//Criar um algoritmo para definir as filas prioritárias.
 // perguntando se a pessoa é Gestante, Idosa, PCD ou Nenhuma das alternativas.
 // Se ela for PCD, Idosa ou Gestante, tem direito a fila prioritária. Se não, não tem direito."
 
-import utils.ScanUtils;
+import aula01.utils.ScanUtils;
 
 public class  Exercicio08 {
     public static void main(String[] args) {

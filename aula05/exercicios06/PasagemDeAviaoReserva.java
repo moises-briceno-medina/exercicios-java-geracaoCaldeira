@@ -65,7 +65,7 @@ public class PasagemDeAviaoReserva {
                 System.out.println("Reserva cancelada com sucesso");
             }
         }
-        System.out.println("Não Tem nenhuma reserva com esse cpf");
+
     }
 
     public static void exibirReserva(LinkedList<Reserva> reservas) {
