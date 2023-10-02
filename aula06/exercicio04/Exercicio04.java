@@ -54,7 +54,7 @@ public class Exercicio04 {
     public static void imprimirListaProduto(LinkedHashMap<Produto,Double> produtoslist){
         System.out.println("Lista de podutos na orden em que foram inseridos");
         for (Map.Entry<Produto,Double> entry: produtoslist.entrySet()){
-            System.out.println(entry.getKey() + ": "+ entry.getValue());
+            System.out.println(entry.getKey());
         }
     }
     public static boolean verificaListaVazia(LinkedHashMap<Produto, Double> produtoslist) {
