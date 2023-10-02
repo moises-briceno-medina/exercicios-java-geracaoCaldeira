@@ -1,5 +1,4 @@
 package aula06.exercicio04;
-
 public class Produto {
     private String nome;
     private int valor;
