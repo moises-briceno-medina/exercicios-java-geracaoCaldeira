@@ -60,7 +60,7 @@ public class Exercicio03 {
         contatos.put(numeroTelefone, newContatos);
         System.out.println("contato adicionado com sucesso");
     }
-    
+
     public static void imprimirListaDeContato(TreeMap<String, Contatos> agendaTelefonica) {
         System.out.println("Lista em ordem alfabética por nome:");
         for (Map.Entry<String, Contatos> entry : agendaTelefonica.entrySet()) {
