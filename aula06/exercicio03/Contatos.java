@@ -32,6 +32,6 @@ public class Contatos {
 
     @Override
     public String toString() {
-        return "Telefone: " + numeroDeTelefone + ", nome: " + nome + ", endereco: " + endereco + ", localidade: " + localidade;
+        return  "Nome: " + nome + ", Telefone: " + numeroDeTelefone + ", Endereco: " + endereco + ", localidade: " + localidade;
     }
 }

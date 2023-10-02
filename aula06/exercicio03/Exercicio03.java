@@ -16,7 +16,38 @@ public class Exercicio03 {
         ScanUtils scan = new ScanUtils();
         TreeMap<String, Contatos> agendaTelefonica = new TreeMap<>();
 
-        
+        int opcao = 0;
+
+        while (opcao != 4) {
+            opcao = scan.coletaInt("""
+                    1 -> Adicionar contato
+                    2 -> Vizualizar Lista em ordem alfabética
+                    3 -> Visualizar por localidade
+                    4 -> Sair
+                    Escolha uma opcao:
+                    """);
+
+            switch (opcao) {
+                case 1:
+                    adicionarContatos(agendaTelefonica, scan);
+                    break;
+                case 2:
+                    if (verificaListaVazia(agendaTelefonica)) {
+                        imprimirListaDeContato(agendaTelefonica);
+                    }
+                    break;
+                case 3:
+                    if (verificaListaVazia(agendaTelefonica)) {
+                        imprimirListaPorLocalidade(agendaTelefonica, scan);
+                    }
+                    break;
+                case 4:
+                    System.out.println("fechando Programa");
+                    break;
+                default:
+                    System.out.println("opção invalida");
+            }
+        }
     }
 
     public static void adicionarContatos(TreeMap<String, Contatos> contatos, ScanUtils scan) {
