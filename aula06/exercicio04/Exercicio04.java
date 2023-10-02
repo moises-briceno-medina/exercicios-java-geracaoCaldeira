@@ -17,6 +17,32 @@ public class Exercicio04 {
         ScanUtils scan = new ScanUtils();
         LinkedHashMap<Produto,Double> listaProdutos = new LinkedHashMap<>();
 
+        int opcao = 0;
+
+        while (opcao != 3) {
+            opcao = scan.coletaInt("""
+                    1 -> Adicionar produto
+                    2 -> Vizualizar lista de produtos
+                    3 -> Sair
+                    Escolha uma opcao:
+                    """);
+
+            switch (opcao) {
+                case 1:
+                    adicionarProduto(listaProdutos, scan);
+                    break;
+                case 2:
+                    if (verificaListaVazia(listaProdutos)) {
+                        imprimirListaProduto(listaProdutos);
+                    }
+                    break;
+                case 3:
+                    System.out.println("fechando Programa");
+                    break;
+                default:
+                    System.out.println("opção invalida");
+            }
+        }
     }
     public static void adicionarProduto(LinkedHashMap<Produto,Double> Produtoslist, ScanUtils scan){
         String nome = scan.coletaTexto("Digite o nome do produto");
