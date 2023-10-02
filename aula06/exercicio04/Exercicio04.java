@@ -23,4 +23,10 @@ public class Exercicio04 {
         Produto newProduto = new Produto(nome,valor);
         Produtoslist.put(newProduto,valor);
     }
+    public static void imprimirListaProduto(LinkedHashMap<Produto,Double> produtoslist){
+        System.out.println("Lista de podutos na orden em que foram inseridos");
+        for (Map.Entry<Produto,Double> entry: produtoslist.entrySet()){
+            System.out.println(entry.getKey() + ": "+ entry.getValue());
+        }
+    }
 }
