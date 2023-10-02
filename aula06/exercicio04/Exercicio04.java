@@ -6,9 +6,11 @@
 package aula06.exercicio04;
 
 import aula01.utils.ScanUtils;
+import aula06.exercicio03.Contatos;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Exercicio04 {
     public static void main(String[] args) {
@@ -28,5 +30,12 @@ public class Exercicio04 {
         for (Map.Entry<Produto,Double> entry: produtoslist.entrySet()){
             System.out.println(entry.getKey() + ": "+ entry.getValue());
         }
+    }
+    public static boolean verificaListaVazia(LinkedHashMap<Produto, Double> produtoslist) {
+        if (!produtoslist.isEmpty()) {
+            return true;
+        } else
+            System.out.println("Lista de produtos vazia");
+        return false;
     }
 }
