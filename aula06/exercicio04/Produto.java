@@ -8,5 +8,17 @@ public class Produto {
         this.nome = nome;
         this.valor = valor;
     }
-    
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + ", valor: " + valor;
+    }
 }
