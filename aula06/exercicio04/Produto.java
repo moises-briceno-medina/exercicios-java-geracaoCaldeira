@@ -1,9 +1,9 @@
 package aula06.exercicio04;
 public class Produto {
     private String nome;
-    private int valor;
+    private double valor;
 
-    public Produto(String nome, int valor) {
+    public Produto(String nome, double valor) {
         this.nome = nome;
         this.valor = valor;
     }
@@ -12,7 +12,7 @@ public class Produto {
         return nome;
     }
 
-    public int getValor() {
+    public double getValor() {
         return valor;
     }
 
