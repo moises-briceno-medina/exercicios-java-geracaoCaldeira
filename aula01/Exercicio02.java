@@ -3,8 +3,7 @@ package aula01;
 
 //Crie um programa que receba 2 números e imprima na tela.
 
-import aula02.utils.ScanUtils;
-
+import utils.ScanUtils;
 public class Exercicio02 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();

@@ -1,7 +1,7 @@
 package aula01;//Peça ao usuário que digite uma palavra ou frase
 // e conte quantas vogais (a, e, i, o, u) estão presentes.
 // Exiba o número de vogais na tela.
-import aula01.utils.ScanUtils;
+import utils.ScanUtils;
 public class Exercicio11 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();

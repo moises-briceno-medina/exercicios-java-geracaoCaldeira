@@ -4,8 +4,7 @@ package aula01;//Escreva um programa que leia a idade do usuário e imprima resp
 //Se tiver mais de 65, avisar que também é facultativo o voto;
 //De 18 até 65, é obrigatório votar.
 
-import aula01.utils.ScanUtils;
-
+import utils.ScanUtils;
 public class Exercicio06 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();

@@ -2,7 +2,7 @@ package aula01;//Crie um programa que converta uma quantia em dólares para outr
 // como euros ou reais. Peça ao usuário para inserir a quantia em dólares
 // e a taxa de câmbio atual. Em seguida, calcule e exiba o valor convertido.
 
-import aula01.utils.ScanUtils;
+import utils.ScanUtils;
 public class Exercicio12 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();

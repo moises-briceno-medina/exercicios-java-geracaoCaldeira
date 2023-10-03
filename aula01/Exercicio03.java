@@ -1,7 +1,7 @@
 package aula01;//Crie um programa que leia 3 números, imprima o maior, o menor e a média aritmética.
 
 
-import aula01.utils.ScanUtils;
+import utils.ScanUtils;
 
 public class Exercicio03 {
     public static void main(String[] args) {
