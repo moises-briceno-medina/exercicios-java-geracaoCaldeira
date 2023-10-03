@@ -1,6 +1,6 @@
 package aula02;
 
-import aula02.utils.ScanUtils;
+import utils.ScanUtils;
 
 //Implemente uma calculadora,
 //onde o usuário deve entrar com 2 números e escolher a operação que deseja realizar.

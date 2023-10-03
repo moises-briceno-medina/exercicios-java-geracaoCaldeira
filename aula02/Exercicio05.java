@@ -1,6 +1,6 @@
 package aula02;//Escreva um programa que separa a string em duas metades e imprime a primeira parte.
 
-import aula02.utils.ScanUtils;
+import utils.ScanUtils;
 
 //substring() se pode usar para dividir uma String no meio
 public class Exercicio05 {

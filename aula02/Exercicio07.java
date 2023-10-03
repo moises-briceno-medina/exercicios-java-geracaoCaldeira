@@ -1,6 +1,6 @@
 package aula02;
 
-import aula02.utils.ScanUtils;
+import utils.ScanUtils;
 
 //Criar um jogo de adivinhação para descobrir quantos soldados
 // os 300 espartanos irão enfrentar.

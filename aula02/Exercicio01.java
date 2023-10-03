@@ -1,6 +1,6 @@
 package aula02;
 
-import aula02.utils.ScanUtils;
+import utils.ScanUtils;
 
 //Crie um programa que determine e escreva os números primos compreendidos entre um intervalo fornecido pelo usuário.
 public class Exercicio01 {
