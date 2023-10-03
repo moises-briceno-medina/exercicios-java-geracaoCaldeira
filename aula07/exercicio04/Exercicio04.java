@@ -7,7 +7,7 @@ package aula07.exercicio04;
 
 import utils.ScanUtils;
 
-public class Exercicio04 {
+public class Exercicio04 implements Calculavel{
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();
 
@@ -21,4 +21,23 @@ public class Exercicio04 {
         }
     }
 
+    @Override
+    public void somar(int numero1, int numero2) {
+
+    }
+
+    @Override
+    public void subtrair(int numero1, int numero2) {
+
+    }
+
+    @Override
+    public void multiplicar(int numero1, int numero2) {
+
+    }
+
+    @Override
+    public void dividir(int numero1, int numero2) {
+
+    }
 }
