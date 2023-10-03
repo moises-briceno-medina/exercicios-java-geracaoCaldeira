@@ -16,7 +16,7 @@ public class Exercicio03 {
         try {
             int numero1 = scan.coletaInt("Digite o primeiro número inteiro:");
             int numero2 = scan.coletaInt("Digite o segundo número inteiro:");
-            }catch (java.util.InputMismatchException e){ //Exception e : Tratamento para outras exceções
+            }catch (Exception e){ //Exception e : Tratamento para outras exceções
             System.out.println("Você não digitou um número inteiro válido.");
         }
     }
