@@ -1,4 +1,4 @@
-package aula07.Exercicio06;
+package aula07.exercicio06;
 
 public class Programa {
     public static void main(String[] args) throws SaldoInsuficienteException {

@@ -1,4 +1,4 @@
-package aula07.Exercicio06;
+package aula07.exercicio06;
 
 public class ContaBancaria {
     private double saldo;
