@@ -1,8 +1,7 @@
 package aula05.exercicio03.imputUtils;
 
-import aula05.utils.ScanUtils;
 import aula05.exercicio03.Tarefa;
-
+import utils.ScanUtils;
 import java.util.List;
 
 public class inputIndiceUtilsTarefa {

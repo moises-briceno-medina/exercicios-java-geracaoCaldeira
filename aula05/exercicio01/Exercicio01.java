@@ -1,7 +1,6 @@
 package aula05.exercicio01;
 
-import aula05.utils.ScanUtils;
-
+import utils.ScanUtils;
 public class Exercicio01 {
     public static void main(String[] args) {
         ScanUtils scan = new ScanUtils();

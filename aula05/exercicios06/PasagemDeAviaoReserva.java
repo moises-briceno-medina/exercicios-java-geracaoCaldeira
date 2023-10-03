@@ -1,6 +1,6 @@
 package aula05.exercicios06;
 
-import aula05.utils.ScanUtils;
+import utils.ScanUtils;
 
 import java.util.LinkedList;
 

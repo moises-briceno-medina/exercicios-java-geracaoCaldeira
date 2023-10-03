@@ -1,6 +1,6 @@
 package aula05.exercicio04.imputUtils;
 
-import aula05.utils.ScanUtils;
+import utils.ScanUtils;
 import aula05.exercicio04.Compra;
 
 import java.util.List;

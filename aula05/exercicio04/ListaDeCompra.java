@@ -1,6 +1,6 @@
 package aula05.exercicio04;
 
-import aula05.utils.ScanUtils;
+import utils.ScanUtils;
 
 import java.util.ArrayList;
 import java.util.List;
