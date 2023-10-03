@@ -6,7 +6,7 @@
 // e implemente um loop para remover até que ela esteja vazia.
 package aula06.exercicio01;
 
-import aula06.exercicio01.utils.ScanUtils;
+import utils.ScanUtils;
 
 import java.util.HashSet;
 import java.util.Objects;

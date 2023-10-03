@@ -6,7 +6,7 @@
 // contatos em ordem alfabética e imprima os contatos com base na localidade.
 package aula06.exercicio03;
 
-import aula01.utils.ScanUtils;
+import utils.ScanUtils;
 
 import java.util.Map;
 import java.util.TreeMap;

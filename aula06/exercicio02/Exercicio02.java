@@ -6,7 +6,7 @@
 // Certifique-se de lidar com o caso em que o nome não está presente no mapa.
 package aula06.exercicio02;
 
-import aula01.utils.ScanUtils;
+import utils.ScanUtils;
 
 import java.util.HashMap;
 

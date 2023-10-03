@@ -5,12 +5,10 @@
 // ordem em que foram inseridos, exibindo o nome do produto e seu preço.
 package aula06.exercicio04;
 
-import aula01.utils.ScanUtils;
-import aula06.exercicio03.Contatos;
+import utils.ScanUtils;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Exercicio04 {
     public static void main(String[] args) {
