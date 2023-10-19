@@ -4,7 +4,7 @@
 // b) Encontre a string mais longa presente na lista.
 // c) Conte quantas vezes cada string aparece na lista e exiba a contagem
 // para as 5 strings mais frequentes.
-package aula08.testesUnitarios.src.main.java.org.example;
+package org.example;
 
 import java.util.*;
 import java.util.stream.Collectors;
